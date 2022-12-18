@@ -1,4 +1,6 @@
 #include <stdio.h>
 int main(void){
-    printf("hello world");
+    printf("hello world\n");
+    char*c="Jh\0n";
+    printf("%s",c);
 }
