@@ -1,6 +1,8 @@
 #include <stdio.h>
 int main(void){
-    printf("hello world\n");
-    char*c="Jh\0n";
-    printf("%s",c);
+int a= 61;
+int b= 4;
+b=1^2;
+printf("%f",b);
 }
+
