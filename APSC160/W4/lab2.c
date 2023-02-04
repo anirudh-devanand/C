@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 //Defining constants
 #define CENT_TO_DOLLAR 0.01
@@ -48,6 +47,7 @@ int main(void) {
         printf("You paid a reasonable price.");
     }
    }
+   //Printing error message
    else{
     printf("error");
    }
