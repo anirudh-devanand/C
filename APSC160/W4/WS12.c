@@ -31,8 +31,8 @@ int main(void) {
     }
     return 0;
     */
-   int i = 1;
-   double j = (double)i;
-   printf("%lf\n",j);
-   printf("%d",i);
+    int i = 1;
+    double j = (double)i;
+    printf("%lf\n",j);
+    printf("%d",i);
 }
