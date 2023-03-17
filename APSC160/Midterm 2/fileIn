@@ -1,0 +1,16 @@
+void main(){
+    FILE*   inFile;
+
+    
+    inFile = fopen(INPUTFILE, "r");
+    
+    if (inFile == NULL)
+        printf("Error opening input file - program terminating...\n");
+    else {
+    while (fscanf(inFile,"%lf", &nextVal) == 1){
+
+    }
+
+        fclose(inFile);
+    }
+}

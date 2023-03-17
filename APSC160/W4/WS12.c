@@ -23,8 +23,10 @@ int main(void) {
     if (inFile == NULL)
         printf("Error opening input file - program terminating...\n");
     else {
-    while (fscanf(inFile,"%lf", &nextVal) > thresholdVal){
-        countAbove++;
+    while (fscanf(inFile,"%lf", &nextVal) == 1){
+        if (nextVal > threshold){
+            countAbove++;
+        }
     }
         printf("%d",countAbove);
         fclose(inFile);

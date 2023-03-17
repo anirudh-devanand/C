@@ -90,4 +90,21 @@ void printPic( int size){
 
 
 
-
+/* 
+ * Prints a dotted line of asterisks with a space 
+ * at every gap-th position. 
+ * Param: size - the total number of characters on the 
+ *        line including spaces. 
+ */
+/*
+void printDottedGap( int size, int gap) { 
+    int count; 
+     
+    for( count = 0; count < size; count++ ) { 
+        if( count % gap == 0 ) 
+            printf( " " ); 
+        else 
+            printf( "*" ); 
+    } 
+} 
+*/
