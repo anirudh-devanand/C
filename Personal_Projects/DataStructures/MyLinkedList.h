@@ -55,7 +55,7 @@ void myLinkedListAddAtIndex(MyLinkedList* obj, int index, int val) {
     MyLinkedList* node=myLinkedListCreate();
     node->val=val;
     node->next=obj->next;
-    obj=node; 
+    obj->next=node; 
 }
 
 void myLinkedListDeleteAtIndex(MyLinkedList* obj, int index) {
