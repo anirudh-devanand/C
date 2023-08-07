@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <stdlib.h>
 #include <math.h>
-
-struct MyLinkedList{
-    int val;
-    struct MyLinkedList *next;
-};
+#include "MyLinkedList.h"
 
 
 bool hasCycle(struct MyLinkedList *head) {

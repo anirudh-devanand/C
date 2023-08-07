@@ -1,13 +1,6 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <math.h>
+#include "MyLinkedList.h"
 
-
-struct MyLinkedList{
-    int val;
-    struct MyLinkedList *next;
-};
 
 struct MyLinkedList* myLinkedListCreate() {
     struct MyLinkedList* obj = (struct MyLinkedList*)malloc(sizeof(struct MyLinkedList));
