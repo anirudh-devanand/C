@@ -136,39 +136,13 @@ struct MyLinkedList *detectCycle(struct MyLinkedList *head) {
 
 struct MyLinkedList *getIntersectionNode(struct MyLinkedList *headA, struct MyLinkedList *headB) {
     struct MyLinkedList *tempA = headA;
-    int count = 0;
-    while (tempA != NULL) {
-        tempA = tempA->next;
-        count++;
-    }
     struct MyLinkedList *tempB = headB;
-    while (tempB != NULL) {
+    while(tempA != tempB) {
+        tempA = tempA->next;
         tempB = tempB->next;
-        count--;
+        if(tempA == NULL && tempB != NULL) tempA = headB;
+        if(tempB == NULL && tempA != NULL) tempB = headA;
     }
-    
-    if (tempA != tempB) return NULL;
-    
-    struct MyLinkedList *run1 = headA;
-    struct MyLinkedList *run2 = headB;
-    
-    if (count > 0) {
-        run1 = headA;
-        run2 = headB;
-    } else if (count <= 0) {
-        run1 = headB;
-        run2 = headA;
-    }
-    
-    count = abs(count);
-
-    for (int i = 0; i < count; i++) {
-        run1 = run1->next;
-    }
-
-    while (1) {
-        if (run1 == run2) return run1;
-        run1 = run1->next;
-        run2 = run2->next;
-    }
+    return tempA;   
 }
+
