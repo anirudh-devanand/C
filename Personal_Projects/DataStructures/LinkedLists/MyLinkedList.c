@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <math.h>
+
 
 struct MyLinkedList{
     int val;
@@ -128,5 +130,45 @@ struct MyLinkedList *detectCycle(struct MyLinkedList *head) {
             flag--;
         }
         else if (run1==run2) return run1;
+    }
+}
+
+
+struct MyLinkedList *getIntersectionNode(struct MyLinkedList *headA, struct MyLinkedList *headB) {
+    struct MyLinkedList *tempA = headA;
+    int count = 0;
+    while (tempA != NULL) {
+        tempA = tempA->next;
+        count++;
+    }
+    struct MyLinkedList *tempB = headB;
+    while (tempB != NULL) {
+        tempB = tempB->next;
+        count--;
+    }
+    
+    if (tempA != tempB) return NULL;
+    
+    struct MyLinkedList *run1 = headA;
+    struct MyLinkedList *run2 = headB;
+    
+    if (count > 0) {
+        run1 = headA;
+        run2 = headB;
+    } else if (count <= 0) {
+        run1 = headB;
+        run2 = headA;
+    }
+    
+    count = abs(count);
+
+    for (int i = 0; i < count; i++) {
+        run1 = run1->next;
+    }
+
+    while (1) {
+        if (run1 == run2) return run1;
+        run1 = run1->next;
+        run2 = run2->next;
     }
 }
