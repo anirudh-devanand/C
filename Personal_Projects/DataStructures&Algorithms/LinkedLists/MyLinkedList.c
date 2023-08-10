@@ -11,6 +11,7 @@ struct MyLinkedList* myLinkedListCreate() {
     return obj;
 }
 
+//O(n) time
 int myLinkedListGet(struct MyLinkedList* obj, int index) {
     if (index < 0) return -1;
     int CurrentIndex = 0;
@@ -22,6 +23,7 @@ int myLinkedListGet(struct MyLinkedList* obj, int index) {
     return obj->val;
 }
 
+//O(1) time
 void myLinkedListAddAtHead(struct MyLinkedList* obj, int val) {
     struct MyLinkedList* head = myLinkedListCreate();
     head->val = val;
@@ -29,6 +31,8 @@ void myLinkedListAddAtHead(struct MyLinkedList* obj, int val) {
     obj = head;
 }
 
+
+//O(n) time
 void myLinkedListAddAtTail(struct MyLinkedList* obj, int val) {
     struct MyLinkedList* tail = myLinkedListCreate();
     tail->val = val;
@@ -38,6 +42,7 @@ void myLinkedListAddAtTail(struct MyLinkedList* obj, int val) {
     obj->next = tail;
 }
 
+//O(n) time
 void myLinkedListAddAtIndex(struct MyLinkedList* obj, int index, int val) {
     int CurrentIndex = 0;
     while (CurrentIndex != index) {
@@ -50,6 +55,7 @@ void myLinkedListAddAtIndex(struct MyLinkedList* obj, int index, int val) {
     obj->next = node;
 }
 
+//O(n) time
 void myLinkedListDeleteAtIndex(struct MyLinkedList* obj, int index) {
     int CurrentIndex = 0;
 

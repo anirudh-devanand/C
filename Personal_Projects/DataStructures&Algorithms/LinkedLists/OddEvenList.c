@@ -1,6 +1,8 @@
 #include "MyLinkedList.h"
 #include <stdio.h>
 
+
+//O(n) time
 struct MyLinkedList* oddEvenList(struct MyLinkedList* head) {
     if (head == NULL || head->next == NULL) {
         return head;
